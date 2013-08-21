@@ -18,9 +18,6 @@
 //= bootrap
 //= require_tree .
 
-$('.filter-choice').on("click", function(){
-	alert('dogs');
-});
 
 var flatterSound = new buzz.sound('public/flatter-sound.wav');
 flatterSound.play();
