@@ -1,0 +1,60 @@
+
+
+var notificationCount = 0;
+
+var incrimentCount = function(){
+   notificationCount++;
+   flatterSound.play();
+   $('.notification-count').html(notificationCount)
+   if(notificationCount == 1){
+     $('.notification-count').show();
+   }
+}
+
+
+$('.globe').on("click", function(){
+    $('.notification-count').hide();
+    notificationCount = 0;});
+
+var i = 2;
+var setCount = function () {
+    setTimeout(function () {
+        $('.count').html(i);
+        i++;
+        incrimentCount();
+        setCount();
+
+
+    }, ((Math.random() * 700)+500))
+};
+
+
+$(".status-text").html("<%= j @post%>");
+$(".status-box").slideDown(500, function () {
+    $(".like-box").slideDown(500, function () {
+        setCount();
+        
+
+    });
+    });
+var y = 0;
+var comments = $('.commenters-container').children('.row');
+console.log(comments)
+var showComments = function(){
+  setTimeout(function(){
+    $(comments[y]).slideDown();
+    y++;
+    incrimentCount();
+    if(y != 10){  
+    showComments();
+    }
+  }, 2000);
+};
+
+
+
+setTimeout(function(){
+  showComments();
+}, 1000);
+
+

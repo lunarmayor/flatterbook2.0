@@ -1,0 +1,80 @@
+.navbar.navbar-inverse{style: "border-radius: 0px; background-color:#64325a"}
+  %a.navbar-brand.pull-left{href: "#", style: "margin-left: 5%;color:white; text-decoration:none"}
+    Flatterbook
+  %a.globe
+    = image_tag "globe-icon.png", size: "22x22", style: "margin-top: 0.92em"
+  %a.notification-count
+    1
+.row
+  .jumbotron
+    %h1
+      Get Validated!
+    %p
+      enter a status and let your ego fill to maximum capacity
+
+.container
+  .row.filters
+    .col-3.filter-choice
+      family
+    .col-3.filter-choice
+      friends
+    .col-3.filter-choice
+      love interest
+    .col-3.active.filter-choice
+      all  
+     
+.row
+  .col-12
+    = form_for :flattery, action: "post",remote: true do |f|
+      .row
+        .col-12.col-lg-6.col-sm-8.col-lg-offset-2
+          .input-group
+            = f.text_field :status, placeholder: "status", class: "form-control", id: "status-input"
+            %span.input-group-btn
+              %button.btn.btn-default
+                post
+
+.row
+  .col-12.status-box
+    .col-3.egohead
+      = image_tag "egohead.png", height: "70"
+    .col-9.status-text-container
+      %span{ style: "font-weight: 500"}
+        Your Ego
+      
+      
+      %span.status-text
+.row
+  .col-12.like-box{style: "display: none"}
+    %span
+      = image_tag "likebutton.png"
+    %span.count
+      1
+    %span
+      people like this
+.commenters-container
+  - count = 0
+  - @commenters.each do |i|
+    .row{style: "display: none"}
+      .col-12.comment-box
+        .col-2
+          = image_tag i[0], height: "40", class: "commenter-image"
+        .col-10
+          %span{style: "font-weight: 500"}
+            = i[1]
+          %span
+            = @randomComments[count]
+    - count = count + 1
+ 
+.navbar.navbar-fixed-bottom
+  %ul.nav.navbar-nav
+    
+    %li.pull-left
+      = custom_tweet_button('Tweet', {:via => "lunarmayor"}, {:class => "tweet-button"})
+    %li
+      %a.pull-right.lunarmayor{ href: "#", style: "color:white; font-size: 14px; opacity: 1; font-weight: none"}
+        @lunarmayor
+  
+
+
+
