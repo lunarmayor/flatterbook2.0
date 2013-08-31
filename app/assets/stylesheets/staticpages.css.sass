@@ -3,7 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $main-color: rgba(20, 53, 125, 1)
 
-
+html
+  margin: 0
+  padding: 0
+  overflow-x: hidden
 .notification-count
   color: black
   font-size: 0.8em
@@ -144,5 +147,14 @@ $main-color: rgba(20, 53, 125, 1)
     margin-bottom: 1.2em !important
   .sound-icon
     display: none
+@media(max-width: 380px)
+  .animated-gif
+    height: 13em
+    margin-top: 1.5em
+    position: relative
+    right: 0.5em
+  .status-text-container
+    position: relative
+    left: 1em
 
 
