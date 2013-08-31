@@ -1,10 +1,14 @@
 
-
+var mySound = new buzz.sound( "https://s3.amazonaws.com/flatterbook/flatter-sound.wav")
 var notificationCount = 0;
+
+$('.form-control').attr('disabled', true);
+$('.form-control').addClass('disabled');
 
 var incrimentCount = function(){
    notificationCount++;
-   flatterSound.play();
+   if(window.sound === true){
+     mySound.play()};
    $('.notification-count').html(notificationCount)
    if(notificationCount == 1){
      $('.notification-count').show();
@@ -15,13 +19,13 @@ var incrimentCount = function(){
 $('.globe').on("click", function(){
     $('.notification-count').hide();
     notificationCount = 0;});
-
 var i = 2;
 var setCount = function () {
     setTimeout(function () {
         $('.count').html(i);
         i++;
         incrimentCount();
+        $(".notifications-container").prepend("<div class= 'col-12 notification'><span class= 'random-name' style= 'font-weight: 500'>"+ Faker.Name.findName()+"</span><span> liked your post!</span></div></div>")
         setCount();
 
 
@@ -47,6 +51,8 @@ var showComments = function(){
     incrimentCount();
     if(y != 10){  
     showComments();
+    } else {
+      $('.more-flatter').slideDown();
     }
   }, 2000);
 };
@@ -56,5 +62,7 @@ var showComments = function(){
 setTimeout(function(){
   showComments();
 }, 1000);
+
+
 
 

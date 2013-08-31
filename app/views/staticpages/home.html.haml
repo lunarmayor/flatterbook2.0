@@ -1,80 +1,102 @@
-.navbar.navbar-inverse{style: "border-radius: 0px; background-color:#64325a"}
+.navbar.navbar-inverse{style: "border-radius: 0px; background-color: #3E35A6"}
   %a.navbar-brand.pull-left{href: "#", style: "margin-left: 5%;color:white; text-decoration:none"}
     Flatterbook
   %a.globe
     = image_tag "globe-icon.png", size: "22x22", style: "margin-top: 0.92em"
   %a.notification-count
     1
+.container
+  .row.gif-container{style: "display:none"}
+    .col-5
+      = image_tag "devicegif.gif", class: "animated-gif"
+    .col-7.notifications-container{style: "padding: 0; overflow: auto"}
+    
+      
+      
+
 .row
   .jumbotron
-    %h1
-      Get Validated!
-    %p
-      enter a status and let your ego fill to maximum capacity
+    .container
+      %h1
+        Get Validated!
+      %p
+        enter a status and let your ego fill to maximum capacity
+%span.col-sm-2.hidden-xs.hidden-sm
+%span.col-sm-6.col-sm-offset-2
+  .row{style: "margin-top: 0.1em"}
+    .col-12
+      = form_for :flattery, action: "post",remote: true do |f|
+        .input-group
+          = f.text_field :status, placeholder: "status", class: "form-control", id: "status-input"
+          %span.input-group-btn
+            %button.btn.btn-default
+              post
 
-.container
-  .row.filters
-    .col-3.filter-choice
-      family
-    .col-3.filter-choice
-      friends
-    .col-3.filter-choice
-      love interest
-    .col-3.active.filter-choice
-      all  
-     
-.row
-  .col-12
-    = form_for :flattery, action: "post",remote: true do |f|
-      .row
-        .col-12.col-lg-6.col-sm-8.col-lg-offset-2
-          .input-group
-            = f.text_field :status, placeholder: "status", class: "form-control", id: "status-input"
-            %span.input-group-btn
-              %button.btn.btn-default
-                post
 
-.row
-  .col-12.status-box
-    .col-3.egohead
-      = image_tag "egohead.png", height: "70"
-    .col-9.status-text-container
-      %span{ style: "font-weight: 500"}
-        Your Ego
+  .row
+    .status-box.col-12
+      .col-3.egohead
+        = image_tag "egopiccopy.png", height: "70"
+      .col-9.status-text-container
+        %span{ style: "font-weight: 500"}
+          Your Ego
       
       
-      %span.status-text
-.row
-  .col-12.like-box{style: "display: none"}
-    %span
-      = image_tag "likebutton.png"
-    %span.count
-      1
-    %span
-      people like this
-.commenters-container
-  - count = 0
-  - @commenters.each do |i|
-    .row{style: "display: none"}
-      .col-12.comment-box
-        .col-2
-          = image_tag i[0], height: "40", class: "commenter-image"
-        .col-10
-          %span{style: "font-weight: 500"}
-            = i[1]
+        %span.status-text
+  .row
+    .like-box{style: "display: none"}
+      %span{style: "margin-left: 1.2em"}
+        = image_tag "likebuttoncopy.png"
+      
+      %span.count
+        1
+      %span
+        people like this
+  .commenters-container
+    - count = 0
+    - @commenters.each do |i|
+      .row.col-md-6{style: "display: none"}
+        .col-12.comment-box
+          .col-2
+            = image_tag i[0], height: "40", class: "commenter-image"
+          .col-10
+            %span{style: "font-weight: 500"}
+              = i[1]
+            %span
+              = @randomComments[count]
+      - count = count + 1
+    .more-flatter{style: "display: none"}
+      %a.btn.btn-primary.btn-lg(data-toggle= "modal" href= "#shareModal")
+        More Flattery?
+    
+
+-# Modal
+.modal.fade#shareModal(tabindex= '-1' role= 'dialog')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close(data-dismiss= "modal" aria-hidden="true")
+          x
+        %h4.modal-title
+          Share Flatterbook?
+      .modal-body
+        .row
           %span
-            = @randomComments[count]
-    - count = count + 1
+            = image_tag 'twitter.png', size: "100"
+          %span
+            = image_tag 'fb.png', size: "100"
  
 .navbar.navbar-fixed-bottom
   %ul.nav.navbar-nav
     
     %li.pull-left
       = custom_tweet_button('Tweet', {:via => "lunarmayor"}, {:class => "tweet-button"})
+
     %li
       %a.pull-right.lunarmayor{ href: "#", style: "color:white; font-size: 14px; opacity: 1; font-weight: none"}
         @lunarmayor
   
-
+    .sound-icon
+      = image_tag "whitesoundicon.png", size: "25x25"
 
 

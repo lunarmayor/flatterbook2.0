@@ -1,6 +1,7 @@
 // Place all the styles related to the staticpages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$main-color: rgba(20, 53, 125, 1)
 
 
 .notification-count
@@ -14,13 +15,46 @@
   &:hover
     text-decoration: none
     color: rgb(100, 50, 90)
+.disabled
+  &:hover
+    cursor: default !important
+
+.btn-primary
+  background-color: $main-color !important
+
+.notification
+  border-bottom: 1px rgba(255, 255, 255, 0.4) solid
+  padding-bottom: 0.5em
+  padding-top: 0.5em
+.notifications-container
+  background-color: rgba(20, 53, 125, 0.2)
+  height: 17.5em
+  max-height: 17.5em
+  overflow: auto !important
+
+.sound-icon
+  position: absolute
+  left: 44%
+  bottom: 1.2em
+  cursor: pointer
+
+.animated-gif
+  height: 15em
+  
+  margin-top: .9em
+  margin-bottom: 1.4em
+.globe
+  cursor: pointer
+
+.filter-choice
+  cursor: pointer
 
 
 #status-input
   box-shadow: none !important
 
   &:focus
-    border-color: #64325a !important
+    border-color: $main-color !important
     -webkit-box-shadow: none !important
     -moz-box-shadow: none !important
     box-shadow:  none !important
@@ -41,22 +75,24 @@
 .navbar
   margin-bottom: 0px !important
   border-bottom: 1px solid rgba(255, 255, 255, 0.4)
+  background-color: $main-color !important
 
 .jumbotron
-  margin-bottom: 0px !important
+  margin-bottom: 0.4em !important
+  background-color: rgba(10, 43, 115, 0.1)
 
 .row
   footer
     background-color: #64325a
 .footer
-  postition: fixed !important
+  position: fixed !important
   bottom: 0
 .status-box
-  margin-top: 25px
+  margin-top: 30px
   display: none
   padding: 0px
   padding-left: 0px
-  background-color: rgba(100, 50, 90, 0.1)
+  background-color: rgba(10, 43, 115, 0.1)
 .status-text-container
   padding: 7px
   padding-left: 15px
@@ -65,12 +101,12 @@
   margin-top: 7px
   margin-bottom: 7px
 .like-box
-  background-color: rgba(100, 50, 90, 0.1)
+  background-color: rgba(10, 43, 115, 0.1)
   border-top: 1px solid white
   padding-top: 7px
   padding-bottom: 7px
 .comment-box
-  background-color: rgba(100, 50, 90, 0.1)
+  background-color: rgba(10, 43, 115, 0.1)
   border-top: 1px solid white
   padding-top: 10px
   padding-bottom: 10px
@@ -85,7 +121,7 @@
 
 
 .navbar-fixed-bottom
-  background-color: rgba(100, 50, 90, 1)
+  background-color: $main-color
   min-height: 35px !important
   li
     a
@@ -97,5 +133,15 @@
 
 .active 
   background-color: rgba(0, 0, 0, 1)
+
+.more-flatter
+  margin-left: 20%
+  margin-top: 2em
+
+@media (min-width: 768px)
+  .jumbotron
+    margin-bottom: 1.2em !important
+  .sound-icon
+    display: none
 
 

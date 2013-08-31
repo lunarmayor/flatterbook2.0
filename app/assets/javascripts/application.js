@@ -13,12 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= requrie 
 //= require buzz.min.js
-//= bootrap
+//= require Faker.js
+//= bootstrap
 //= require_tree .
-
-
-var flatterSound = new buzz.sound('public/flatter-sound.wav');
-flatterSound.play();
-
