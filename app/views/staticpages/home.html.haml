@@ -88,7 +88,7 @@
           .container
             %span.share
               = image_tag 'twitter.png', size: "100", class: "twitter-share"
-              = custom_tweet_button('Tweet', {:via => "myself", text:"all the internet validation you deserve", related: "lunarmayor"}, {:class => "tweet-button-modal tweet-button"})
+              = custom_tweet_button('Tweet', {:via => "lunarmayor", text:"all the internet validation you deserve", related: "lunarmayor"}, {:class => "tweet-button-modal tweet-button"})
             %span.share
               = image_tag 'fb.png', size: "100", class: "facebook-share"
       .modal-footer
@@ -100,7 +100,7 @@
   %ul.nav.navbar-nav
     
     %li.pull-left
-      = custom_tweet_button('Tweet', {:via => "myself", text:"all the internet validation you deserve", related: "lunarmayor"}, {:class => "tweet-button"})
+      = custom_tweet_button('Tweet', {:via => "lunarmayor", text:"all the internet validation you deserve", related: "lunarmayor"}, {:class => "tweet-button"})
 
     %li
       %a.pull-right.lunarmayor{ href: "https://twitter.com/lunarmayor", style: "color:white; font-size: 14px; opacity: 1; font-weight: none"}
