@@ -86,11 +86,20 @@
       .modal-body
         .row
           .container
-            %span.share
+            %span.share.twitter-share-span
               = image_tag 'twitter.png', size: "100", class: "twitter-share"
               = custom_tweet_button('Tweet', {:via => "lunarmayor", text:"all the internet validation you deserve", related: "lunarmayor"}, {:class => "tweet-button-modal tweet-button"})
-            %span.share
-              = image_tag 'fb.png', size: "100", class: "facebook-share"
+            %span.share.fb-share-span
+              %div(class="fb-like" data-href="http://www.flatterbook.com" data-width="40" data-layout="box_count" data-show-faces="false" data-send="true")
+              :javascript
+                (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=589671764429816";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+              = #image_tag 'fb.png', size: "100", class: "facebook-share"
       .modal-footer
         %button.btn.btn-default(type= 'button' data-dismiss= 'modal')
           Close
@@ -101,7 +110,6 @@
     
     %li.pull-left
       = custom_tweet_button('Tweet', {:via => "lunarmayor", text:"all the internet validation you deserve", related: "lunarmayor"}, {:class => "tweet-button"})
-
     %li
       %a.pull-right.lunarmayor{ href: "https://twitter.com/lunarmayor", style: "color:white; font-size: 14px; opacity: 1; font-weight: none"}
         @lunarmayor
