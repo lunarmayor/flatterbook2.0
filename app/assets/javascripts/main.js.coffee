@@ -16,7 +16,7 @@ $(document).ready(->
 
     window.sound = !window.sound)
 
-  $('.globe').click(->
+  $('.globe').on('click', ->
     if($('.gif-container').is(':visible'))
        $('.gif-container').slideUp(800)
     else
