@@ -17,10 +17,12 @@ $(document).ready(->
     window.sound = !window.sound)
 
   $('.globe').on('click', ->
-    if($('.gif-container').is(':visible'))
-       $('.gif-container').slideUp(800)
+    if $('.gif-container').is(':visible')
+      $('.gif-container').slideUp(800)
     else
-       $('.gif-container').slideDown(800))
+      $('.gif-container').slideDown(800)
+  )
+
   )
 
 $(document).ready(->

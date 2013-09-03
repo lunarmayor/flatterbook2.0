@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require buzz.min.js
 //= require Faker.js
+//= require main
 //= bootstrap
 //= require_tree .
