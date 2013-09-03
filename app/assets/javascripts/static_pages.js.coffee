@@ -17,12 +17,11 @@ $(document).ready(->
     window.sound = !window.sound)
 
   $('.globe').on('click', ->
-    if $('.gif-container').is(':visible') == true
+    if $('.gif-container').is(':visible')
        $('.gif-container').slideUp(800)
-       alert "close"
     else
        $('.gif-container').slideDown(800)
-       alert "open")
+  )
 
   )
 
