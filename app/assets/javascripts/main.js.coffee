@@ -26,3 +26,8 @@ $(document).ready(->
 $(document).ready(->
   $('.random-name').text(Faker.Name.findName())
 )
+
+
+$(document).ready(->
+  $('.twitter-share').on('click', ->
+    $('.tweet-button-modal')[0].click()))

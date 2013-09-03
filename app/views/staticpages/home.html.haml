@@ -87,9 +87,10 @@
         .row
           .container
             %span.share
-              = image_tag 'twitter.png', size: "100"
+              = image_tag 'twitter.png', size: "100", class: "twitter-share"
+              = custom_tweet_button('Tweet', {:via => "lunarmayor"}, {:class => "tweet-button-modal tweet-button"})
             %span.share
-              = image_tag 'fb.png', size: "100"
+              = image_tag 'fb.png', size: "100", class: "facebook-share"
       .modal-footer
         %button.btn.btn-default(type= 'button' data-dismiss= 'modal')
           Close
