@@ -18,11 +18,9 @@ $(document).ready(->
 
   $('.globe').on('click', ->
     if $('.gif-container').is(':visible')
-       $('.gif-container').slideUp(800)
-       break
+      $('.gif-container').slideUp(800)
     else
-       $('.gif-container').slideDown(800)
-       break
+      $('.gif-container').slideDown(800)
   )
 
   )
