@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require buzz.min.js
 //= require Faker.js
+//= main.js.coffee
 //= bootstrap
 //= require_tree .

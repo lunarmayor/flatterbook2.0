@@ -5,6 +5,9 @@
     = image_tag "globe-icon.png", size: "22x22", style: "margin-top: 0.92em"
   %a.notification-count
     1
+  .sound-icon2.pull-right.hidden-sm.hidden-xs
+    = image_tag "nosoundicon.png", size: "25x25"
+
 .container
   .row.gif-container{style: "display:none"}
     .col-5
@@ -72,7 +75,7 @@
     
 
 -# Modal
-.modal.fade#shareModal(tabindex= '-1' role= 'dialog')
+.modal.fade#shareModal(tabindex= '-1' role= 'dialog' aria-hidden="true")
   .modal-dialog
     .modal-content
       .modal-header
@@ -82,10 +85,11 @@
           Share Flatterbook?
       .modal-body
         .row
-          %span
-            = image_tag 'twitter.png', size: "100"
-          %span
-            = image_tag 'fb.png', size: "100"
+          .container
+            %span.share
+              = image_tag 'twitter.png', size: "100"
+            %span.share
+              = image_tag 'fb.png', size: "100"
       .modal-footer
         %button.btn.btn-default(type= 'button' data-dismiss= 'modal')
           Close
